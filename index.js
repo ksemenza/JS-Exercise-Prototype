@@ -12,12 +12,15 @@ function Airplane(name) {
   this.name = name;
   this.isFlying = false;
 }
+
 Airplane.prototype.takeOff = function () {
   this.isFlying = true;
 };
+
 Airplane.prototype.land = function () {
   this.isFlying = false;
 };
+// console.log(Airplane);
 
 
 /*
@@ -39,9 +42,60 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
-
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.stomach = [];
 }
+console.log(Person.name);
+console.log(Person);
+
+Person.prototype.eat = function(eat) {
+  if (this.stomach <= [10]) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+Person.prototype.poop = function(poop) {
+  if (this.stomach > [10]) {
+    let emptyStomach = this.stomach === [];
+    return emptyStomach;
+    console.log(emptyStomach)
+  } else {
+    return this.stomach;
+  }
+};
+
+Person.prototype.toString = function(toString) {
+  return`${this.name}, ${this.age}`
+}
+
+let newPerson = new Person({
+  name: "Kim",
+  age: 36
+});
+
+console.log(newPerson);
+console.log(Person);
+
+/*
+
+// const toEat = Object.prototype.toString;
+// toEat.call(new Person);
+
+
+// console.log(`this is toEat ${toEat}`);
+
+// Eat.prototype.checkStomach = function(){
+//   if(this.eatenFood) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
 
 /*
   TASK 2
